@@ -1,0 +1,50 @@
+/* Styles de base */
+      body {
+        font-family: 'Bitter', serif;
+        background-color: #eef;
+        color: darkblue;
+      }
+      nav img {
+        width: 100%;
+      }
+
+      /* Styles pour les smartphones */
+        .row2 {
+        	   background: #87CEEB;
+        }
+        .row {
+          background: white;
+          text-align: center;
+          border: solid;
+        }
+
+      /* Styles pour les tablettes */
+      @media (min-width: 768px) {
+        .row2 {
+        	   background: #87CEEB;
+        }
+        .row {
+          background: white;
+          text-align: center;
+          border: solid;
+        }
+      }
+
+      /* Styles pour les écrans moyens et grands */
+      @media (min-width: 992px) {
+        .row2 {
+        	   background: #87CEEB;
+        }
+        .row {
+          background: white;
+          text-align: center;
+          border: solid;
+        }
+        .menu{
+        	font-size: 2.5em;
+        	text-align: center;
+        }
+        .row3{
+        	font-size: 2em;
+        }
+      }

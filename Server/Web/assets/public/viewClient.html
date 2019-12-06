@@ -12,20 +12,17 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-
+	  <link href="CSS/indexStyle.css" rel="stylesheet" media="all" type="text/css">
 
   </head>
 
   <body>
+  <div class="row">
+	  <a href="#"><img src="Picts/home.png" alt="logo"></a>
 
-    <header>
-    	<div class="row">
+	  <h1>La meilleure WebTV de tous les temps, ADEDIGADO</h1>
+  </div>
 
-      
-      	<h1>La meilleure WebTV de tous les temps</h1>
-    	</div>
-
-    </header> 
 
     <nav>
     	<div class="menu">
@@ -60,7 +57,7 @@
 	  		<div class="col-lg-9 col-lg-offset-3">
 	    		<div class="input-group">
 	      		<span class="input-group-btn">
-	        	<button class="btn btn-default" type="button">Send</button>
+	        	<button class="btn btn-default" type="button" onClick="f()">Send</button>
 
 	      		</span>
 	      		<input type="text" class="form-control" placeholder="write your message here...">
@@ -76,83 +73,17 @@
     	<p> </p>
     	<p> Copyright © 2019 JAVABarder enterprise. Tout droit réservé. </p>
     </microfooter>
-	<style>/* Styles de base */
-	body {
-		font-family: 'Bitter', serif;
-		background-color: #eef;
-		color: darkblue;
-	}
-	nav img {
-		width: 100%;
-	}
 
-	/* Styles pour les smartphones */
-	.row2 {
-		background: #87CEEB;
-	}
-	.row {
-		background: white;
-		text-align: center;
-		border: solid;
-	}
-
-	/* Styles pour les tablettes */
-	@media (min-width: 768px) {
-		.row2 {
-			background: #87CEEB;
-		}
-		.row {
-			background: white;
-			text-align: center;
-			border: solid;
-		}
-	}
-
-	/* Styles pour les écrans moyens et grands */
-	@media (min-width: 992px) {
-		.row2 {
-			background: #87CEEB;
-		}
-		.row {
-			background: white;
-			text-align: center;
-			border: solid;
-		}
-		.menu{
-			font-size: 2.5em;
-			text-align: center;
-		}
-		.row3{
-			font-size: 2em;
-		}
-	}</style>
-	<script type="text/javascript" >
-		function sendData(data) {
-			var XHR = new XMLHttpRequest();
-			var FD  = new FormData();
-
-			// Mettez les données dans l'objet FormData
-			for(name in data) {
-				FD.append(name, data[name]);
-			}
-
-			// Définissez ce qui se passe si la soumission s'est opérée avec succès
-			XHR.addEventListener('load', function(event) {
-				alert('Loading');
-			});
-
-			// Definissez ce qui se passe en cas d'erreur
-			XHR.addEventListener('error', function(event) {
-				alert('Fail');
-			});
-
-			// Configurez la requête
-			XHR.open('POST', 'localhost:8080');
-
-			// Expédiez l'objet FormData ; les en-têtes HTTP sont automatiquement définies
-			XHR.send(FD);
-		}
-	</script>
   </body>
+  <script>{function f() {
 
+  	const http = new XMLHttpRequest();
+  	const url = 'http://localhost:8080/stream/1';
+  	http.open("GET",url);
+  	http.send();
+  	http.onreadystatechange=(e)=>{
+  		console.log(http.responseText)
+	}
+
+  }}</script>
 </html>

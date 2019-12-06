@@ -44,21 +44,24 @@ app.get('/viewClient',(req,res)=>{
  * GetMessage
  */
 /*
-get Stremear
+get Streamer
  */
 
+let listSessions = [];
+
 app.get('/stream/:twitchSession',(req,res)=>{
-    var key = generator.generate({
+    console.log(listSessions);
+    const key = generator.generate({
         length: 10,
         numbers: true
     });
     // U get the session
-    this.listSessions.append([request.route.query.twitchSession,key]);
-    res.sendfile(page.viewClient);
+    listSessions.push({twitchSession: req.twitchSession, key: key});
+    res.sendfile(page.viewStream);
+
 
 });
-
-app.listSessions = [];
+app.use(express.static('public'));
 
 /**
  * PostMessage
