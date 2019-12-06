@@ -1,8 +1,8 @@
 var io = require('socket.io');
 var express = require('express');
-
+var page = require('./constPage');
 var app = express();
-
+var generator = require('generate-password');
 /**
  * Web Pages
  */
@@ -10,7 +10,7 @@ var app = express();
     Choice Page
  */
 app.get('/',(req,res)=>{
-    res.sendfile(page.mainPage );
+    res.sendfile(page.mainPage);
 });
 
 /*
@@ -35,13 +35,30 @@ app.get('/authenViewer',(req,res)=>{
 /*
     ClientPage Stream
  */
-app.get('/authenViewer',(req,res)=>{
+app.get('/viewClient',(req,res)=>{
     res.sendfile(page.viewClient);
+
 });
 
 /**
  * GetMessage
  */
+/*
+get Stremear
+ */
+
+app.get('/stream/:twitchSession',(req,res)=>{
+    var key = generator.generate({
+        length: 10,
+        numbers: true
+    });
+    // U get the session
+    this.listSessions.append([request.route.query.twitchSession,key]);
+    res.sendfile(page.viewClient);
+
+});
+
+app.listSessions = [];
 
 /**
  * PostMessage

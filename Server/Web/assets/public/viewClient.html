@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JAVABIEN</title>
+    <meta name="description" content="une webtv en 1 nuit">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+
+  </head>
+
+  <body>
+
+    <header>
+    	<div class="row">
+
+      
+      	<h1>La meilleure WebTV de tous les temps</h1>
+    	</div>
+
+    </header> 
+
+    <nav>
+    	<div class="menu">
+    	<div class="col-lg-3">
+    		<ul class="nav nav-pills nav-stacked">
+            <li> <a href="#"> <span class="glyphicon glyphicon-usd"></span> faire un don </a> </li>
+            <li> <a href="#"> <span class="glyphicon glyphicon-cog"></span> préférences </a> </li>
+            <li> <a href="#"> <span class="glyphicon glyphicon-log-out"></span> se déconnecter </a> </li>
+            </ul>
+    	</div>
+    	</div>
+    </nav>
+
+  <div class="row2">
+	   <div class="col-lg-4"> </div>
+	   <iframe
+	    src="https://player.twitch.tv/?channel=sardoche&muted=true"
+	    height="720"
+        width="1280"
+	    frameborder="0"
+	    scrolling="no"
+	    allowfullscreen="true">
+		</iframe>
+		<div class="col-lg-4"> </div>
+   </div>
+    <!--les boutons-->
+
+    <nav>
+	   
+	   <div class="row3">
+	  
+	  		<div class="col-lg-9 col-lg-offset-3">
+	    		<div class="input-group">
+	      		<span class="input-group-btn">
+	        	<button class="btn btn-default" type="button">Send</button>
+
+	      		</span>
+	      		<input type="text" class="form-control" placeholder="write your message here...">
+	    		</div><!-- /input-group -->
+	  		</div><!-- /.col-lg-6 -->
+		</div>
+
+    </nav>
+
+
+
+    <microfooter class="col-lg-6 col-lg-offset-5">
+    	<p> </p>
+    	<p> Copyright © 2019 JAVABarder enterprise. Tout droit réservé. </p>
+    </microfooter>
+	<style>/* Styles de base */
+	body {
+		font-family: 'Bitter', serif;
+		background-color: #eef;
+		color: darkblue;
+	}
+	nav img {
+		width: 100%;
+	}
+
+	/* Styles pour les smartphones */
+	.row2 {
+		background: #87CEEB;
+	}
+	.row {
+		background: white;
+		text-align: center;
+		border: solid;
+	}
+
+	/* Styles pour les tablettes */
+	@media (min-width: 768px) {
+		.row2 {
+			background: #87CEEB;
+		}
+		.row {
+			background: white;
+			text-align: center;
+			border: solid;
+		}
+	}
+
+	/* Styles pour les écrans moyens et grands */
+	@media (min-width: 992px) {
+		.row2 {
+			background: #87CEEB;
+		}
+		.row {
+			background: white;
+			text-align: center;
+			border: solid;
+		}
+		.menu{
+			font-size: 2.5em;
+			text-align: center;
+		}
+		.row3{
+			font-size: 2em;
+		}
+	}</style>
+	<script type="text/javascript" >
+		function sendData(data) {
+			var XHR = new XMLHttpRequest();
+			var FD  = new FormData();
+
+			// Mettez les données dans l'objet FormData
+			for(name in data) {
+				FD.append(name, data[name]);
+			}
+
+			// Définissez ce qui se passe si la soumission s'est opérée avec succès
+			XHR.addEventListener('load', function(event) {
+				alert('Loading');
+			});
+
+			// Definissez ce qui se passe en cas d'erreur
+			XHR.addEventListener('error', function(event) {
+				alert('Fail');
+			});
+
+			// Configurez la requête
+			XHR.open('POST', 'localhost:8080');
+
+			// Expédiez l'objet FormData ; les en-têtes HTTP sont automatiquement définies
+			XHR.send(FD);
+		}
+	</script>
+  </body>
+
+</html>
