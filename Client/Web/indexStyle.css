@@ -2,33 +2,49 @@
       body {
         font-family: 'Bitter', serif;
         background-color: #eef;
-        color: #259;
+        color: darkblue;
       }
       nav img {
         width: 100%;
       }
 
       /* Styles pour les smartphones */
-      #left, #side1, #side2 {
-        padding: 10px 10px 0 10px;
-      }
+        .row2 {
+        	   background: #87CEEB;
+        }
+        .row {
+          background: white;
+          text-align: center;
+          border: solid;
+        }
 
       /* Styles pour les tablettes */
       @media (min-width: 768px) {
-        #left{
-          padding: 0;
-        } 
-        #side1 {
-          padding: 10px 5px 0 0;
-        } 
-        #side2 {
-          padding: 10px 0 0 5px;
+        .row2 {
+        	   background: #87CEEB;
+        }
+        .row {
+          background: white;
+          text-align: center;
+          border: solid;
         }
       }
 
       /* Styles pour les écrans moyens et grands */
       @media (min-width: 992px) {
-        #side1, #side2 {
-          padding: 0 0 10px 10px;
-        } 
+        .row2 {
+        	   background: #87CEEB;
+        }
+        .row {
+          background: white;
+          text-align: center;
+          border: solid;
+        }
+        .menu{
+        	font-size: 2.5em;
+        	text-align: center;
+        }
+        .row3{
+        	font-size: 2em;
+        }
       }
